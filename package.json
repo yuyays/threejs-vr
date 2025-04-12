@@ -1,0 +1,24 @@
+{
+  "name": "vr-web-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "@types/react": "^19.1.1",
+    "@types/react-dom": "^19.1.2",
+    "@types/three": "^0.175.0",
+    "react": "^19.1.0",
+    "three": "^0.175.0",
+    "three-mesh-ui": "^6.5.4",
+    "webxr-polyfill": "^2.0.3"
+  }
+}
