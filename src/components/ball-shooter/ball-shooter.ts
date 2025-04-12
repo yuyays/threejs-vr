@@ -137,7 +137,7 @@ export class BallShooter {
     this.balls.push(ball);
     
     // Add event for releasing the ball
-    controller.addEventListener('selectend', () => this.onSelectEnd(controller), { once: true });
+    controller.addEventListener('selectend', () => this.onSelectEnd(controller), );
   }
   
   private onSelectEnd(controller: THREE.XRTargetRaySpace): void {
