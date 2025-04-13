@@ -8,7 +8,7 @@ import { PinchableObject } from './pinchable-object';
 export class PinchInteractionManager {
   private scene: THREE.Scene;
   private camera: THREE.Camera;
-  // private renderer: THREE.WebGLRenderer;
+  private renderer: THREE.WebGLRenderer;
   private pinchableObjects: PinchableObject[] = [];
   private isPinching: boolean = false;
   private pinchStartPosition: THREE.Vector3 = new THREE.Vector3();
@@ -20,7 +20,7 @@ export class PinchInteractionManager {
   constructor(scene: THREE.Scene, camera: THREE.Camera, renderer: THREE.WebGLRenderer) {
     this.scene = scene;
     this.camera = camera;
-    //this.renderer = renderer;
+    this.renderer = renderer;
     this.raycaster = new THREE.Raycaster();
     this.mouse = new THREE.Vector2();
 
@@ -37,12 +37,12 @@ export class PinchInteractionManager {
 
   update(rightHand: XRHandSpace | null, deltaTime: number): void {
     if (rightHand) {
-      //this.updateVR(rightHand, deltaTime);
+      this.updateVR(rightHand, deltaTime);
     }
     this.updateReturningObjects(deltaTime);
   }
 
-  private updateVR(rightHand: XRHandSpace, ): void {
+  private updateVR(rightHand: XRHandSpace, deltaTime: number): void {
     const rightPinching = PinchDetector.detectPinch(rightHand);
     const pinchPosition = PinchDetector.getPinchMidpoint(rightHand);
 
