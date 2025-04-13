@@ -23,4 +23,11 @@ declare module 'three' {
   interface XRTargetRaySpace {
     hand?: XRHand;
   }
+  export interface XRHandSpace extends THREE.Object3D {
+    joints: {
+      [key: string]: THREE.Object3D & {
+        position: THREE.Vector3;
+      };
+    };
+  }
 }
